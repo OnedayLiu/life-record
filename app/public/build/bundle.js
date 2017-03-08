@@ -1,41 +1,41 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
 /******/ 			exports: {}
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.l = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// identity function for calling harmony imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
-
+/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -46,7 +46,7 @@
 /******/ 			});
 /******/ 		}
 /******/ 	};
-
+/******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function(module) {
 /******/ 		var getter = module && module.__esModule ?
@@ -55,13 +55,13 @@
 /******/ 		__webpack_require__.d(getter, 'a', getter);
 /******/ 		return getter;
 /******/ 	};
-
+/******/
 /******/ 	// Object.prototype.hasOwnProperty.call
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 396);
 /******/ })
@@ -649,7 +649,7 @@ if (typeof __DEV__ === 'undefined') {
     var modelUtil = __webpack_require__(6);
     var throttle = __webpack_require__(49);
 
-    var zrender = __webpack_require__(131);
+    var zrender = __webpack_require__(133);
     var zrUtil = __webpack_require__(0);
     var colorTool = __webpack_require__(20);
     var Eventful = __webpack_require__(28);
@@ -2483,7 +2483,7 @@ if (typeof __DEV__ === 'undefined') {
 
     module.exports = echarts;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(133)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(115)))
 
 /***/ }),
 /* 2 */
@@ -2508,7 +2508,7 @@ if (typeof __DEV__ === 'undefined') {
 
     graphic.Image = __webpack_require__(75);
 
-    graphic.Text = __webpack_require__(126);
+    graphic.Text = __webpack_require__(128);
 
     graphic.Circle = __webpack_require__(382);
 
@@ -2530,7 +2530,7 @@ if (typeof __DEV__ === 'undefined') {
 
     graphic.CompoundPath = __webpack_require__(375);
 
-    graphic.LinearGradient = __webpack_require__(123);
+    graphic.LinearGradient = __webpack_require__(125);
 
     graphic.RadialGradient = __webpack_require__(376);
 
@@ -6250,7 +6250,7 @@ if (typeof __DEV__ === 'undefined') {
 
     module.exports = List;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(133)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(115)))
 
 /***/ }),
 /* 10 */
@@ -7133,7 +7133,7 @@ if (typeof __DEV__ === 'undefined') {
     var PathProxy = __webpack_require__(41);
     var pathContain = __webpack_require__(371);
 
-    var Pattern = __webpack_require__(124);
+    var Pattern = __webpack_require__(126);
     var getCanvasPattern = Pattern.prototype.getCanvasPattern;
 
     var abs = Math.abs;
@@ -15778,7 +15778,7 @@ if (typeof __DEV__ === 'undefined') {
 
 
     var zrUtil = __webpack_require__(0);
-    var Element = __webpack_require__(114);
+    var Element = __webpack_require__(116);
     var BoundingRect = __webpack_require__(8);
 
     /**
@@ -16089,10 +16089,10 @@ if (typeof __DEV__ === 'undefined') {
 
     var zrUtil = __webpack_require__(0);
 
-    var Style = __webpack_require__(125);
+    var Style = __webpack_require__(127);
 
-    var Element = __webpack_require__(114);
-    var RectText = __webpack_require__(128);
+    var Element = __webpack_require__(116);
+    var RectText = __webpack_require__(130);
     // var Stateful = require('./mixin/Stateful');
 
     /**
@@ -23961,7 +23961,7 @@ var factory = exports;
     var vector = __webpack_require__(4);
     var matrix = __webpack_require__(19);
 
-    var Transformable = __webpack_require__(129);
+    var Transformable = __webpack_require__(131);
     var zrUtil = __webpack_require__(0);
 
     var BoundingRect = __webpack_require__(8);
@@ -24496,7 +24496,7 @@ var factory = exports;
  */
 
 
-    var polygonContain = __webpack_require__(118);
+    var polygonContain = __webpack_require__(120);
 
     var BoundingRect = __webpack_require__(8);
 
@@ -25283,6 +25283,219 @@ var factory = exports;
 
 /***/ }),
 /* 114 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 115 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25292,9 +25505,9 @@ var factory = exports;
  */
 
 
-    var guid = __webpack_require__(122);
+    var guid = __webpack_require__(124);
     var Eventful = __webpack_require__(28);
-    var Transformable = __webpack_require__(129);
+    var Transformable = __webpack_require__(131);
     var Animatable = __webpack_require__(389);
     var zrUtil = __webpack_require__(0);
 
@@ -25551,7 +25764,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 115 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -26187,7 +26400,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 116 */
+/* 118 */
 /***/ (function(module, exports) {
 
 
@@ -26204,7 +26417,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 117 */
+/* 119 */
 /***/ (function(module, exports) {
 
 
@@ -26252,12 +26465,12 @@ var factory = exports;
 
 
 /***/ }),
-/* 118 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 
-    var windingLine = __webpack_require__(121);
+    var windingLine = __webpack_require__(123);
 
     var EPSILON = 1e-8;
 
@@ -26295,7 +26508,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 119 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -26340,7 +26553,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 120 */
+/* 122 */
 /***/ (function(module, exports) {
 
 
@@ -26358,7 +26571,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 121 */
+/* 123 */
 /***/ (function(module, exports) {
 
 
@@ -26385,7 +26598,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 122 */
+/* 124 */
 /***/ (function(module, exports) {
 
 /**
@@ -26404,7 +26617,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 123 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26453,7 +26666,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 124 */
+/* 126 */
 /***/ (function(module, exports) {
 
 
@@ -26476,7 +26689,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 125 */
+/* 127 */
 /***/ (function(module, exports) {
 
 /**
@@ -26798,7 +27011,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 126 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -26929,7 +27142,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 127 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -26976,7 +27189,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 128 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -27131,7 +27344,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 129 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27388,7 +27601,7 @@ var factory = exports;
 
 
 /***/ }),
-/* 130 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -27441,7 +27654,7 @@ if (!__webpack_require__(13).canvasSupported) {
 
 
 /***/ }),
-/* 131 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -27455,7 +27668,7 @@ if (!__webpack_require__(13).canvasSupported) {
  */
 // Global defines
 
-    var guid = __webpack_require__(122);
+    var guid = __webpack_require__(124);
     var env = __webpack_require__(13);
     var zrUtil = __webpack_require__(0);
 
@@ -27868,219 +28081,6 @@ if (!__webpack_require__(13).canvasSupported) {
 
     module.exports = zrender;
 
-
-
-/***/ }),
-/* 132 */
-/***/ (function(module, exports) {
-
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 133 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
 
 
 /***/ }),
@@ -33504,8 +33504,8 @@ __webpack_require__(395);
 
     var graphic = __webpack_require__(2);
 
-    var quadraticContain = __webpack_require__(119);
-    var lineContain = __webpack_require__(117);
+    var quadraticContain = __webpack_require__(121);
+    var lineContain = __webpack_require__(119);
 
     var LargeLineShape = graphic.extendShape({
         shape: {
@@ -39460,7 +39460,7 @@ __webpack_require__(395);
 
 
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(132)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(114)))
 
 /***/ }),
 /* 229 */
@@ -43424,7 +43424,7 @@ __webpack_require__(395);
 
 
 
-    var polygonContain = __webpack_require__(118).contain;
+    var polygonContain = __webpack_require__(120).contain;
     var BoundingRect = __webpack_require__(8);
 
     // Key of the first level is brushType: `line`, `rect`, `polygon`.
@@ -49940,7 +49940,7 @@ __webpack_require__(395);
     }
 
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(132)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(114)))
 
 /***/ }),
 /* 298 */
@@ -53107,7 +53107,7 @@ __webpack_require__(395);
     var zrUtil = __webpack_require__(0);
     var numberUtil = __webpack_require__(3);
     var sliderMove = __webpack_require__(62);
-    var LinearGradient = __webpack_require__(123);
+    var LinearGradient = __webpack_require__(125);
     var helper = __webpack_require__(99);
     var modelUtil = __webpack_require__(6);
 
@@ -61645,8 +61645,8 @@ __webpack_require__(395);
 
     var util = __webpack_require__(0);
     var config = __webpack_require__(51);
-    var Style = __webpack_require__(125);
-    var Pattern = __webpack_require__(124);
+    var Style = __webpack_require__(127);
+    var Pattern = __webpack_require__(126);
 
     function returnFalse() {
         return false;
@@ -61891,7 +61891,7 @@ __webpack_require__(395);
 
     var Layer = __webpack_require__(363);
 
-    var requestAnimationFrame = __webpack_require__(116);
+    var requestAnimationFrame = __webpack_require__(118);
 
     // PENDIGN
     // Layer exceeds MAX_PROGRESSIVE_LAYER_NUMBER may have some problem when flush directly second time.
@@ -63246,9 +63246,9 @@ __webpack_require__(395);
     var util = __webpack_require__(0);
     var Dispatcher = __webpack_require__(32).Dispatcher;
 
-    var requestAnimationFrame = __webpack_require__(116);
+    var requestAnimationFrame = __webpack_require__(118);
 
-    var Animator = __webpack_require__(115);
+    var Animator = __webpack_require__(117);
     /**
      * @typedef {Object} IZRenderStage
      * @property {Function} update
@@ -63956,7 +63956,7 @@ __webpack_require__(395);
 
 
 
-    var normalizeRadian = __webpack_require__(120).normalizeRadian;
+    var normalizeRadian = __webpack_require__(122).normalizeRadian;
     var PI2 = Math.PI * 2;
 
     module.exports = {
@@ -64072,14 +64072,14 @@ __webpack_require__(395);
 
 
     var CMD = __webpack_require__(41).CMD;
-    var line = __webpack_require__(117);
+    var line = __webpack_require__(119);
     var cubic = __webpack_require__(370);
-    var quadratic = __webpack_require__(119);
+    var quadratic = __webpack_require__(121);
     var arc = __webpack_require__(369);
-    var normalizeRadian = __webpack_require__(120).normalizeRadian;
+    var normalizeRadian = __webpack_require__(122).normalizeRadian;
     var curve = __webpack_require__(25);
 
-    var windingLine = __webpack_require__(121);
+    var windingLine = __webpack_require__(123);
 
     var containStroke = line.containStroke;
 
@@ -65848,7 +65848,7 @@ __webpack_require__(395);
  */
 
 
-    var polyHelper = __webpack_require__(127);
+    var polyHelper = __webpack_require__(129);
 
     module.exports = __webpack_require__(14).extend({
         
@@ -65877,7 +65877,7 @@ __webpack_require__(395);
  */
 
 
-    var polyHelper = __webpack_require__(127);
+    var polyHelper = __webpack_require__(129);
 
     module.exports = __webpack_require__(14).extend({
         
@@ -66115,7 +66115,7 @@ __webpack_require__(395);
  */
 
 
-    var Animator = __webpack_require__(115);
+    var Animator = __webpack_require__(117);
     var util = __webpack_require__(0);
     var isString = util.isString;
     var isFunction = util.isFunction;
@@ -66989,7 +66989,7 @@ __webpack_require__(395);
 
 
     var zrLog = __webpack_require__(73);
-    var vmlCore = __webpack_require__(130);
+    var vmlCore = __webpack_require__(132);
 
     function parseInt10(val) {
         return parseInt(val, 10);
@@ -67189,15 +67189,15 @@ if (!__webpack_require__(13).canvasSupported) {
     var CMD = __webpack_require__(41).CMD;
     var colorTool = __webpack_require__(20);
     var textContain = __webpack_require__(24);
-    var RectText = __webpack_require__(128);
+    var RectText = __webpack_require__(130);
     var Displayable = __webpack_require__(53);
     var ZImage = __webpack_require__(75);
-    var Text = __webpack_require__(126);
+    var Text = __webpack_require__(128);
     var Path = __webpack_require__(14);
 
     var Gradient = __webpack_require__(54);
 
-    var vmlCore = __webpack_require__(130);
+    var vmlCore = __webpack_require__(132);
 
     var round = Math.round;
     var sqrt = Math.sqrt;
@@ -68241,7 +68241,7 @@ if (!__webpack_require__(13).canvasSupported) {
 
 
     __webpack_require__(394);
-    __webpack_require__(131).registerPainter('vml', __webpack_require__(393));
+    __webpack_require__(133).registerPainter('vml', __webpack_require__(393));
 
 
 /***/ }),
@@ -68257,37 +68257,37 @@ var echarts = __webpack_require__(134);
 var myChart = echarts.init(document.getElementById('main'));
 // 绘制图表
 myChart.setOption({
-    title: {
-        text: '运动记录'
+  title: {
+    text: '运动记录'
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    // data:['最高气温','最低气温']
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+  },
+  yAxis: {
+    type: 'value',
+    axisLabel: {
+      formatter: '{value}'
+    }
+  },
+  series: [{
+    name: '最高步数',
+    type: 'line',
+    data: [5000, 10001, 15000, 6000, 20000, 3000, 2000],
+    markPoint: {
+      data: [{ type: 'max', name: '最大值' }, { type: 'min', name: '最小值' }]
     },
-    tooltip: {
-        trigger: 'axis'
-    },
-    legend: {
-        // data:['最高气温','最低气温']
-    },
-    xAxis: {
-        type: 'category',
-        boundaryGap: false,
-        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
-    },
-    yAxis: {
-        type: 'value',
-        axisLabel: {
-            formatter: '{value}'
-        }
-    },
-    series: [{
-        name: '最高步数',
-        type: 'line',
-        data: [5000, 10001, 15000, 6000, 20000, 3000, 2000],
-        markPoint: {
-            data: [{ type: 'max', name: '最大值' }, { type: 'min', name: '最小值' }]
-        },
-        markLine: {
-            data: [{ type: 'average', name: '平均值' }]
-        }
-    }]
+    markLine: {
+      data: [{ type: 'average', name: '平均值' }]
+    }
+  }]
 });
 
 /***/ })
