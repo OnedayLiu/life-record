@@ -1,0 +1,27 @@
+{
+  "name": "life-record",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "Oneday",
+  "license": "ISC",
+  "dependencies": {
+    "echarts": "^3.4.0",
+    "egg": "^1.0.0-rc.2",
+    "egg-view-ejs": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-syntax-decorators": "^6.13.0",
+    "babel-preset-env": "^1.1.10",
+    "babel-preset-latest": "^6.22.0",
+    "webpack": "^2.2.1"
+  }
+}
