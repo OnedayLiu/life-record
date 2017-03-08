@@ -12,11 +12,16 @@
   "author": "Oneday",
   "license": "ISC",
   "dependencies": {
+    "@types/react": "^15.0.14",
+    "@types/react-dom": "^0.14.23",
     "echarts": "^3.4.0",
     "egg": "^1.0.0-rc.2",
-    "egg-view-ejs": "^1.0.1"
+    "egg-view-ejs": "^1.0.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
+    "awesome-typescript-loader": "^3.1.2",
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
@@ -25,6 +30,8 @@
     "babel-preset-latest": "^6.22.0",
     "eslint": "^3.17.1",
     "eslint-plugin-react": "^6.10.0",
+    "source-map-loader": "^0.1.6",
+    "typescript": "^2.2.1",
     "webpack": "^2.2.1"
   }
 }

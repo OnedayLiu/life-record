@@ -1,1 +1,1 @@
-require('egg').startCluster();
+require('egg').startCluster({ port: 8080 });
