@@ -13,8 +13,8 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          "presets": ["latest"],
-          "plugins": ["syntax-decorators"]
+          'presets': ['latest'],
+          'plugins': ['syntax-decorators']
         }
       }
     ]
