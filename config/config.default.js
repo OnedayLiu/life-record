@@ -4,4 +4,4 @@ exports.view = {
   mapping: {
     '.ejs': 'ejs'
   }
-}
+};

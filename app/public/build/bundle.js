@@ -68280,7 +68280,7 @@ myChart.setOption({
   series: [{
     name: '最高步数',
     type: 'line',
-    data: [5000, 10001, 15000, 6000, 20000, 3000, 2000],
+    data: [5000, 10001, 15000, 6000, 20000, 3000, 2004],
     markPoint: {
       data: [{ type: 'max', name: '最大值' }, { type: 'min', name: '最小值' }]
     },
