@@ -60,4 +60,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { CountDown } from './countdown';
-ReactDOM.render(<CountDown currYear="2017"/>, document.getElementById('countDown'));
+import { Todo } from './todo';
+// ReactDOM.render(<CountDown currYear="2017"/>, document.getElementById('countDown'));
+ReactDOM.render(<Todo />, document.getElementById('todo'));
