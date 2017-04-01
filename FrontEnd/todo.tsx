@@ -1,6 +1,5 @@
 import * as React from 'react';
-import * as axios from 'axios';
-import * as Cookies from 'js-cookie';
+import * as utils from './utils/request';
 interface IState {
   taskVal: string;
   toDoList: Object[];
@@ -29,7 +28,8 @@ export class Todo extends React.Component<{}, IState> {
     await this.getDoneList();
   }
   public async getTodoList() {
-    const ret = await axios.get(`/todo/getTodoList?_csrf=${Cookies.get('csrfToken')}`);
+    const ret = await utils.get('/todo/getTodoList');
+    console.log(ret)
     if (ret.status === 200) {
       this.setState({
         toDoList: ret.data
@@ -37,7 +37,7 @@ export class Todo extends React.Component<{}, IState> {
     }
   }
   public async getDoneList() {
-    const ret = await axios.get(`/todo/getDoneList?_csrf=${Cookies.get('csrfToken')}`);
+    const ret = await utils.get('/todo/getDoneList');
     if (ret.status === 200) {
       this.setState({
         doneList: ret.data.reverse()
@@ -53,7 +53,7 @@ export class Todo extends React.Component<{}, IState> {
       id: new Date().getTime(),
       item: taskVal
     };
-    const ret = await axios.post(`/todo/addTodoItem?_csrf=${Cookies.get('csrfToken')}`, toDoItem);
+    const ret = await utils.post('/todo/addTodoItem', toDoItem);
     if (ret.status === 200 && ret.data.code === 0) {
       const toDoList = this.state.toDoList;
       toDoList.push(toDoItem);
@@ -71,15 +71,14 @@ export class Todo extends React.Component<{}, IState> {
         break;
       }
     }
-    const deleteTodoItemRet = await axios.post(`/todo/deleteTodoItem?_csrf=${Cookies.get('csrfToken')}`,
-      { id: item.id });
+    const deleteTodoItemRet = await utils.post('/todo/deleteTodoItem', item);
     if (deleteTodoItemRet.status === 200 && deleteTodoItemRet.data.code === 0) {
       console.log('删除成功');
       this.setState({ toDoList });
     }
   }
   public getTODOItems() {
-    return this.state.toDoList.map((item, i) => { 
+    return this.state.toDoList.map((item, i) => {
       return (
         <li key={item.id}>
           <span>{item.item}</span>
@@ -99,7 +98,7 @@ export class Todo extends React.Component<{}, IState> {
       }
     }
     doneList.unshift(item);
-    const setTaskDone = await axios.post(`/todo/setTaskDone?_csrf=${Cookies.get('csrfToken')}`, item);
+    const setTaskDone = await utils.post('/todo/setTaskDone', item);
     if (setTaskDone.status === 200 && setTaskDone.data.code === 0) {
       this.setState({ toDoList, doneList });
     }
