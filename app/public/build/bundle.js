@@ -1049,12 +1049,9 @@ class Todo extends React.Component {
                 }
             }
             doneList.unshift(item);
-            const deleteTodoItemRet = yield axios.post(`/todo/deleteTodoItem?_csrf=${Cookies.get('csrfToken')}`, { id: item.id });
-            if (deleteTodoItemRet.status === 200 && deleteTodoItemRet.data.code === 0) {
-                const addDoneItemRet = yield axios.post(`/todo/addDoneItem?_csrf=${Cookies.get('csrfToken')}`, item);
-                if (addDoneItemRet.status === 200 && addDoneItemRet.data.code === 0) {
-                    this.setState({ toDoList, doneList });
-                }
+            const setTaskDone = yield axios.post(`/todo/setTaskDone?_csrf=${Cookies.get('csrfToken')}`, item);
+            if (setTaskDone.status === 200 && setTaskDone.data.code === 0) {
+                this.setState({ toDoList, doneList });
             }
         });
     }

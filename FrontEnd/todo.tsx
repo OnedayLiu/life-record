@@ -99,13 +99,9 @@ export class Todo extends React.Component<{}, IState> {
       }
     }
     doneList.unshift(item);
-    const deleteTodoItemRet = await axios.post(`/todo/deleteTodoItem?_csrf=${Cookies.get('csrfToken')}`,
-      { id: item.id });
-    if (deleteTodoItemRet.status === 200 && deleteTodoItemRet.data.code === 0) {
-      const addDoneItemRet = await axios.post(`/todo/addDoneItem?_csrf=${Cookies.get('csrfToken')}`, item);
-      if (addDoneItemRet.status === 200 && addDoneItemRet.data.code === 0) {
-        this.setState({ toDoList, doneList });
-      }
+    const setTaskDone = await axios.post(`/todo/setTaskDone?_csrf=${Cookies.get('csrfToken')}`, item);
+    if (setTaskDone.status === 200 && setTaskDone.data.code === 0) {
+      this.setState({ toDoList, doneList });
     }
   }
   public getDoneItems() {

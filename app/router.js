@@ -6,4 +6,5 @@ module.exports = function router(app) {
   app.post('/todo/addTodoItem', controller.todo.addTodoItem);
   app.post('/todo/addDoneItem', controller.todo.addDoneItem);
   app.post('/todo/deleteTodoItem', controller.todo.deleteTodoItem);
+  app.post('/todo/setTaskDone', controller.todo.setTaskDone);
 };
