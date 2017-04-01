@@ -1,3 +1,9 @@
 module.exports = function router(app) {
-  app.get('/', app.controller.home.ejs);
+  const { controller } = app;
+  app.get('/', controller.home.ejs);
+  app.get('/todo/getTodoList', controller.todo.getTodoList);
+  app.get('/todo/getDoneList', controller.todo.getDoneList);
+  app.post('/todo/addTodoItem', controller.todo.addTodoItem);
+  app.post('/todo/addDoneItem', controller.todo.addDoneItem);
+  app.post('/todo/deleteTodoItem', controller.todo.deleteTodoItem);
 };
