@@ -18,6 +18,7 @@ module.exports = app => {
       data = Array.isArray(data) ? data : [ data ];
       const db = yield this.dbConnect();
       const ret = yield db.collection(collectionName).insertMany(data);
+      db.close();
       if (ret.insertedCount === data.length) {
         return { code: 0};
       }
@@ -26,6 +27,7 @@ module.exports = app => {
     * deleteById(data, collectionName) {
       const db = yield this.dbConnect();
       const ret = yield db.collection(collectionName).deleteOne(data);
+      db.close();
       if (ret.deletedCount === 1) {
         return { code: 0};
       }
@@ -40,6 +42,7 @@ module.exports = app => {
           else reject(`获取数据失败,detail:${err}`);
         });
       });
+      db.close();
       return ret;
     }
     * getTodoList() {
