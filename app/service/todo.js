@@ -26,7 +26,7 @@ module.exports = app => {
     }
     * deleteById(data, collectionName) {
       const db = yield this.dbConnect();
-      const ret = yield db.collection(collectionName).deleteOne(data);
+      const ret = yield db.collection(collectionName).deleteOne({ id: data.id });
       db.close();
       if (ret.deletedCount === 1) {
         return { code: 0};
